@@ -1,0 +1,33 @@
+name: Build release assets
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Test translation adapter
+        run: node tests/translate.test.cjs
+      - name: Build plugin and source package
+        run: |
+          python build.py
+          git archive --format=zip --prefix=pot-app-translate-plugin-gemini/ --output=dist/pot-app-translate-plugin-gemini-source.zip HEAD
+      - name: Upload release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$RELEASE_TAG" dist/*.potext dist/pot-app-translate-plugin-gemini-source.zip --repo "$GITHUB_REPOSITORY"
+

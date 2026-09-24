@@ -1,0 +1,13 @@
+dist/
+__pycache__/
+*.pyc
+.env
+.env.*
+config.json
+*.log
+*.db
+*.db-shm
+*.db-wal
+node_modules/
+work/
+screenshots/

@@ -1,0 +1,29 @@
+name: Check plugin
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Test translation adapter
+        run: node tests/translate.test.cjs
+      - name: Build plugin
+        run: python build.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pot-gemini-plugin
+          path: dist/*.potext
+          if-no-files-found: error

@@ -1,0 +1,50 @@
+{
+  "id": "plugin.com.pot-app.gemini-openai-compatible",
+  "plugin_type": "translate",
+  "icon": "gemini.svg",
+  "display": "Gemini（OpenAI 兼容）",
+  "homepage": "https://github.com/xyxxxx06221/pot-app-translate-plugin-gemini",
+  "needs": [
+    { "key": "apiKey", "display": "API 密钥", "type": "input" },
+    {
+      "key": "baseUrl",
+      "display": "接口地址",
+      "type": "input",
+      "default": "https://generativelanguage.googleapis.com/v1beta/openai"
+    },
+    {
+      "key": "model",
+      "display": "模型名称",
+      "type": "input",
+      "default": "gemini-3.1-flash-lite"
+    }
+  ],
+  "language": {
+    "auto": "auto",
+    "zh_cn": "Simplified Chinese",
+    "zh_tw": "Traditional Chinese",
+    "en": "English",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "fr": "French",
+    "es": "Spanish",
+    "ru": "Russian",
+    "de": "German",
+    "it": "Italian",
+    "tr": "Turkish",
+    "pt_pt": "European Portuguese",
+    "pt_br": "Brazilian Portuguese",
+    "vi": "Vietnamese",
+    "id": "Indonesian",
+    "th": "Thai",
+    "ms": "Malay",
+    "ar": "Arabic",
+    "hi": "Hindi",
+    "mn_cy": "Mongolian (Cyrillic script)",
+    "mn_mo": "Mongolian (traditional Mongolian script)",
+    "km": "Khmer",
+    "nb_no": "Norwegian Bokmal",
+    "nn_no": "Norwegian Nynorsk",
+    "fa": "Persian"
+  }
+}

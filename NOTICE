@@ -1,0 +1,14 @@
+Pot Gemini Translation Plugin (OpenAI-compatible)
+
+Adapted from pot-app-translate-plugin-deepseek by Tzulao55.
+Original project: https://github.com/tzulao55/pot-app-translate-plugin-deepseek
+Reference commit: b284b8af25d69825bcc4e068bef1ec014ca69316
+
+Gemini adaptation maintained by xyxxxx06221.
+Modified on 2026-09-24: Gemini/OpenAI-compatible requests, configurable endpoint
+and model, language mapping, translation-only prompts, error handling, tests,
+and packaging.
+
+Distributed under the upstream GNU General Public License version 3.
+See LICENSE for the complete license text.
+This is an independent adaptation, not an official Google or Pot product.
